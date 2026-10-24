@@ -13,8 +13,11 @@ _hero_l, _hero_r = st.columns([1, 5], vertical_alignment="center")
 with _hero_l:
     st.image(str(PROJECT_ROOT / "assets" / "logo.png"), width=130)
 with _hero_r:
-    st.markdown('<p class="big-title">托摆<span class="stamp"> · </span>'
-                '把技能摆到路边去<span class="stamp">。</span></p>', unsafe_allow_html=True)
+    st.markdown(
+        '<div style="display:flex;align-items:flex-end;gap:14px">'
+        '<p class="big-title" style="margin:0">托摆<span class="stamp"> · </span>'
+        '把技能摆到路边去<span class="stamp">。</span></p>'
+        '<span class="seal-stamp">开张</span></div>', unsafe_allow_html=True)
     st.markdown('<p class="sub-title">把技能托付给 AI，替你摆到路边——2 分钟上架服务到闲鱼，'
                 '记账、日志、商机全部 AI 代办，你的 agent 也能替你经营。</p>',
                 unsafe_allow_html=True)

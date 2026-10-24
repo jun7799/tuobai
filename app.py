@@ -14,23 +14,45 @@ st.set_page_config(page_title="托摆 · 把技能摆到路边去", page_icon="�
 st.markdown("""
 <style>
 :root {
-    --bg: #FAFAF9; --bg-alt: #F5F5F4; --surface: #FFFFFF;
-    --ink: #1C1917; --ink-2: #57534E; --ink-3: #A8A29E;
-    --accent: #EA580C; --accent-deep: #C2410C; --accent-soft: #FFF7ED;
-    --line: #E7E5E4; --term: #1C1917; --term-ink: #D6D3D1;
+    --bg: #F5EFDF; --bg-alt: #EDE5D0; --surface: #FFFDF7;
+    --ink: #2A1E13; --ink-2: #5C4A38; --ink-3: #A6967D;
+    --accent: #EA580C; --accent-deep: #C2410C; --accent-soft: #FBEED9;
+    --seal-red: #C0391A;
+    --line: #E3D9C2; --term: #26180D; --term-ink: #D9CFBB;
     --mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+    --serif: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
 }
-/* ---------- 排版 ---------- */
+/* ---------- 县城诗意：三色装订线 + 纸颗粒（伪元素，全站签名） ---------- */
+.stApp::before{content:"";position:fixed;top:0;left:0;right:0;height:4px;z-index:999;
+    pointer-events:none;
+    background:repeating-linear-gradient(90deg,
+      #C0391A 0 60px,#F5EFDF 60px 120px,#2C4F8F 120px 180px);opacity:.6}
+.stApp::after{content:"";position:fixed;inset:0;z-index:998;pointer-events:none;
+    opacity:.35;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .35 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* ---------- 排版（正文黑体保可用性，大标题衬线给哲学感） ---------- */
 html, body, .stApp, p, span, div, input { font-family: -apple-system,
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; }
 h1 { font-size: 2rem !important; font-weight: 700 !important; color: var(--ink) !important;
-     line-height: 1.25 !important; letter-spacing: -0.01em; }
-h2 { font-size: 1.35rem !important; font-weight: 700 !important; color: var(--ink) !important; }
+     line-height: 1.25 !important; letter-spacing: -0.01em;
+     font-family: var(--serif) !important; }
+h2 { font-size: 1.35rem !important; font-weight: 700 !important; color: var(--ink) !important;
+     font-family: var(--serif) !important; }
 h3 { font-size: 1.05rem !important; font-weight: 600 !important; color: var(--ink) !important; }
 .big-title { font-size: 2.3rem; font-weight: 700; color: var(--ink);
-             line-height: 1.2; letter-spacing: -0.01em; }
-.big-title .stamp { color: var(--accent); }
+             line-height: 1.2; letter-spacing: .02em; font-family: var(--serif); }
+.big-title .stamp { color: var(--seal-red); }
 .sub-title { font-size: 1.02rem; color: var(--ink-2); line-height: 1.6; }
+/* 印章：红底竖排小方章 */
+.seal-stamp{display:inline-flex;align-items:center;justify-content:center;
+    background:var(--seal-red);color:#F5EFDF;font-family:var(--serif);
+    font-weight:700;font-size:.82rem;letter-spacing:.2em;
+    writing-mode:vertical-rl;border-radius:3px;transform:rotate(-4deg);
+    padding:.5em .3em;box-shadow:inset 0 0 0 2px rgba(245,239,223,.4)}
+/* 盖章语义：红方点 + 砖红字（已成交/已生成类标记） */
+.sealed{color:var(--seal-red) !important}
+.sealed::before{content:"";width:.5em;height:.5em;background:var(--seal-red);
+    display:inline-block;margin-right:.45em;vertical-align:baseline}
 code, .stCode { font-family: var(--mono) !important; }
 strong { color: var(--ink); }
 /* ---------- 侧边栏 ---------- */
