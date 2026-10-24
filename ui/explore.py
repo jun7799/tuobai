@@ -116,7 +116,7 @@ with c1:
             except llm_client.LLMError as e:
                 st.error(f"提炼失败：{e}")
 with c2:
-    if st.button("🐟 带着方向去开张", type="primary", use_container_width=True,
+    if st.button("🐟 带着方向去开张", type="primary",
                  disabled=not p.get("direction")):
         st.session_state.skill = p["direction"]
         st.session_state.step = "intake"

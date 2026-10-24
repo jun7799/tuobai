@@ -37,7 +37,7 @@ if online:
     for item_id, svc, _ in online:
         st.markdown(f"- 🐟 **{svc}**（item_id: {item_id}）")
     confirm = st.checkbox("我确认下架以上全部闲鱼商品（可随时重新开张）")
-    if st.button("⬇️ 一键下架", type="primary", disabled=not confirm, use_container_width=True):
+    if st.button("⬇️ 一键下架", type="primary", disabled=not confirm):
         ok, fail = 0, []
         for item_id, svc, _ in online:
             with st.status(f"下架 {svc}…"):

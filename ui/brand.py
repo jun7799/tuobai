@@ -45,8 +45,6 @@ chat_assistant(
     preview=_preview_brand,
     on_confirm=_save_brand,
 )
-st.caption("确认后自动填进下面的表单，也可以继续手动改。")
-
 st.divider()
 
 # 服务候选：已开张的服务自动带入
@@ -69,7 +67,7 @@ for s in p.get("services", []):
         services_pool.append({"name": s, "desc": "", "price": ""})
 
 # 表单（预填）
-left, right = st.columns([2, 1])
+left, right = st.columns([2, 1], gap="large")
 with left:
     name = st.text_input("昵称/署名", value=p.get("name", "") or "", key="bd_name",
                          placeholder="例：俊哥")
@@ -86,6 +84,7 @@ with right:
     tpl_name = st.radio("名片风格", ["warm", "dark"],
                         format_func=lambda x: _TPL_LABELS[x],
                         key="bd_tpl")
+    st.caption("暖色适合朋友圈与社群，暗色适合技术向头图。")
     if st.button("✨ AI 帮我写介绍", use_container_width=True):
         with st.spinner("AI 起草中…"):
             try:
@@ -101,10 +100,10 @@ with right:
             except llm_client.LLMError as e:
                 st.error(f"AI 起草失败：{e}")
 
-st.markdown(f"**自动带入的服务**（来自你的开张记录）："
-            + ("；".join(s["name"] for s in services_pool) if services_pool else "暂无，去开张开卖先开一家"))
+st.caption("自动带入的服务（来自你的开张记录）："
+           + ("；".join(s["name"] for s in services_pool) if services_pool else "暂无，先去「上架服务」开一家"))
 
-if st.button("🎨 生成名片", type="primary", use_container_width=True,
+if st.button("🎨 生成名片", type="primary",
              disabled=not (name.strip() and tagline.strip())):
     strengths = [s.strip() for s in strengths_raw.replace("，", ",").split(",") if s.strip()]
     contact_rows = [c.strip() for c in contacts.splitlines() if c.strip()] or ["💬 详询请私信"]
@@ -127,10 +126,10 @@ if st.button("🎨 生成名片", type="primary", use_container_width=True,
             capture_output=True, text=True, encoding="utf-8", errors="replace",
             env=env, timeout=60, stdin=subprocess.DEVNULL, cwd=str(brand_dir))
     if png_path.exists():
-        st.image(str(png_path), use_container_width=True)
+        st.image(str(png_path), width=420)
         with open(png_path, "rb") as f:
             st.download_button("⬇️ 下载名片 PNG", f, file_name=f"名片_{name}.png",
-                               mime="image/png", use_container_width=True)
+                               mime="image/png")
         st.toast("名片已生成！首页的「名片」指标已点亮")
     else:
         st.error(f"渲染失败：{((proc.stdout or '')+(proc.stderr or ''))[-300:]}")

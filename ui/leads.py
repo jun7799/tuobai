@@ -23,8 +23,8 @@ c1.metric("总商机", len(leads))
 active = [l for l in leads if l.get("stage") in ("线索", "沟通中", "已报价")]
 c2.metric("进行中", len(active))
 won = [l for l in leads if l.get("stage") == "已成交"]
-c3.metric("已成交", len(won), f"¥{sum(l.get('amount', 0) for l in won):.0f}")
-c4.metric("意向金额", f"¥{sum(l.get('amount', 0) for l in active):.0f}")
+c3.metric("已成交", len(won), (f"¥{sum(l.get('amount', 0) for l in won):,.2f}" if won else None))
+c4.metric("意向金额", f"¥{sum(l.get('amount', 0) for l in active):,.2f}")
 
 st.divider()
 
@@ -45,7 +45,7 @@ with tab1:
                                    index=STAGES.index("线索"))
         l_need = st.text_area("需求描述", key="ld_need", height=70,
                               placeholder="例：想要店铺海报，每月 5 张")
-        submitted = st.form_submit_button("➕ 登记", type="primary", use_container_width=True)
+        submitted = st.form_submit_button("➕ 登记", type="primary")
     if submitted:
         if not l_name.strip():
             st.warning("客户称呼不能为空")
@@ -62,13 +62,14 @@ with tab1:
             st.rerun()
 
     if leads:
+        st.divider()
         st.markdown("**商机列表**（下拉改阶段，自动保存）")
         for lead in sorted(leads, key=lambda x: x.get("created_at", ""), reverse=True):
-            col1, col2, col3 = st.columns([3, 1.2, 1])
+            col1, col2, col3 = st.columns([5, 2, 0.6], vertical_alignment="center")
             with col1:
                 icon = {"已成交": "🟢", "已流失": "⚫"}.get(lead["stage"], "🔵")
                 st.markdown(f"{icon} **{lead['name']}** · {lead.get('source', '')} · "
-                            f"¥{lead.get('amount', 0):.0f}")
+                            f"¥{lead.get('amount', 0):,.2f}")
                 if lead.get("need"):
                     st.caption(lead["need"][:50])
             with col2:
@@ -132,7 +133,7 @@ with tab4:
     st.markdown("**客户问「这个多少钱」，把需求丢给阿托**")
     need_desc = st.text_area("客户需求描述", key="qt_need", height=90,
                              placeholder="例：宠物店想要每月5张海报，长期合作，预算不多")
-    if st.button("💡 AI 估价 + 生成应答话术", type="primary", use_container_width=True):
+    if st.button("💡 AI 估价 + 生成应答话术", type="primary"):
         if len(need_desc.strip()) < 8:
             st.warning("先把客户的需求多写几个字（至少 8 个字），AI 才好估价")
             st.stop()

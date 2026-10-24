@@ -161,8 +161,7 @@ def _render_xianyu(out_dir: Path, pkg: dict) -> None:
         st.caption(f"⏳ 限流保护：距下次可发布约 {wait}s（闲鱼 1 件/分钟）")
     st.warning("⚠️ 发布是不可逆写操作：点下方确认 → 商品将真实出现在你的闲鱼账号", icon="⚠️")
     confirm = st.checkbox("我确认将此商品发布到闲鱼")
-    if st.button("🚀 确认上架", type="primary", disabled=not confirm or wait > 0,
-                 use_container_width=True):
+    if st.button("🚀 确认上架", type="primary", disabled=not confirm or wait > 0):
         images = [p for p in [out_dir / "xianyu_main.png", out_dir / "xhs" / "cover.png"]
                   if p.exists()]
         if not images:

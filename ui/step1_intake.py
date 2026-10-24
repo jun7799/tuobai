@@ -42,21 +42,18 @@ def render() -> None:
     for i, role in enumerate(ROLES):
         with cols[i]:
             if st.button(f"{ROLE_EMOJI[role]}\n{role}", key=f"role_{i}",
-                         use_container_width=True,
                          type="primary" if st.session_state.role == role else "secondary"):
                 st.session_state.role = role
                 st.rerun()
     if st.session_state.role:
         st.markdown(f"已选择：**{ROLE_EMOJI[st.session_state.role]} {st.session_state.role}**")
 
-    st.markdown("<div style='height:.6rem'></div>", unsafe_allow_html=True)
 
     # 一句话技能 + 灵感按钮
-    skill_col, btn_col = st.columns([4.2, 1])
+    skill_col, btn_col = st.columns([4.2, 1], vertical_alignment="bottom")
     with skill_col:
         st.markdown("**用一句话说说你的技能**（卖什么、给谁、多久交付）")
     with btn_col:
-        st.markdown("<div style='height:1.1rem'></div>", unsafe_allow_html=True)
         if st.button("🎲 来点灵感", use_container_width=True):
             st.session_state.w_skill = random.choice(INSPIRATIONS)
             st.rerun()
@@ -78,7 +75,7 @@ def render() -> None:
             st.session_state.step = "intake"
             st.switch_page("ui/home.py")
     with col2:
-        if st.button("下一步 →", type="primary", use_container_width=True):
+        if st.button("下一步 →", type="primary"):
             if not st.session_state.role:
                 st.warning("先选一个角色大类")
                 st.stop()

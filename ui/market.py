@@ -54,7 +54,7 @@ skill = st.text_input("想看哪个方向", value=default_skill,
 tab1, tab2 = st.tabs(["🛒 闲鱼真实同行", "🤖 AI 情报报告"])
 
 with tab1:
-    if st.button("🔍 搜索闲鱼同行在售商品", type="primary", use_container_width=True):
+    if st.button("🔍 搜索闲鱼同行在售商品", type="primary"):
         if len(skill.strip()) < 2:
             st.warning("先在上面输入一个方向（至少 2 个字），比如「PPT 美化」")
             st.stop()
@@ -97,7 +97,7 @@ with tab1:
         st.markdown(st.session_state["_market_insight"])
 
 with tab2:
-    if st.button("📄 生成 AI 情报报告", type="primary", use_container_width=True):
+    if st.button("📄 生成 AI 情报报告", type="primary"):
         if len(skill.strip()) < 4:
             st.warning("先在上面输入一个方向（至少 4 个字），比如「帮人改简历」")
             st.stop()

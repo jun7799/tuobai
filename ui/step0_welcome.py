@@ -37,7 +37,7 @@ def render() -> None:
             <div class="role-card" style="text-align:center">
               <div style="font-size:2rem">{emoji}</div>
               <div style="font-weight:700;font-size:1.05rem;margin:.3rem 0">{title}</div>
-              <div style="color:#888;font-size:.85rem">{desc}</div>
+              <div style="color:var(--ink-2);font-size:.85rem">{desc}</div>
             </div>""", unsafe_allow_html=True)
         if i < 3:
             with cols[i * 2 + 1]:
@@ -56,8 +56,8 @@ def render() -> None:
             <div class="role-card">
               <div style="font-size:1.8rem">{role['emoji']}</div>
               <div style="font-weight:700;font-size:1.1rem;margin:.3rem 0">{role['name']}</div>
-              <div style="color:#666;font-size:.85rem;line-height:1.5">{role['skill']}</div>
-              <div style="margin-top:.6rem;font-size:.78rem;color:{'#059669' if has_output else '#999'}">
+              <div style="color:var(--ink-2);font-size:.85rem;line-height:1.5">{role['skill']}</div>
+              <div style="margin-top:.6rem;font-size:.78rem;color:{'#059669' if has_output else 'var(--ink-3)'}">
                 {'✅ 已生成全套装备' if has_output else '⏳ 待预生成'}
               </div>
             </div>""", unsafe_allow_html=True)
@@ -68,7 +68,7 @@ def render() -> None:
                 st.session_state.step = "result"
                 st.rerun()
 
-    st.markdown("<div style='height:1rem'></div>", unsafe_allow_html=True)
-    if st.button("🚀 用我自己的技能开张（2 分钟）", type="primary", use_container_width=True):
+    st.write("")
+    if st.button("🚀 用我自己的技能开张（2 分钟）", type="primary"):
         st.session_state.step = "intake"
         st.rerun()

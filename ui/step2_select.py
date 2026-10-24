@@ -37,7 +37,7 @@ def render() -> None:
             st.session_state.step = "intake"
             st.rerun()
     with col2:
-        if st.button("🔥 开始生成", type="primary", use_container_width=True):
+        if st.button("🔥 开始生成", type="primary"):
             selected = {
                 "xianyu": st.session_state.get("sel_xianyu", False),
                 "xhs": st.session_state.get("sel_xhs", False),

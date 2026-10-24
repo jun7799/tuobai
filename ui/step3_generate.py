@@ -62,7 +62,7 @@ def render() -> None:
     if pending is None:
         st.balloons()
         st.success("全套开张装备生成完毕！")
-        if st.button("🎉 查看成果", type="primary", use_container_width=True):
+        if st.button("🎉 查看成果", type="primary"):
             st.session_state.step = "result"
             st.rerun()
         return

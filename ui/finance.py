@@ -11,9 +11,9 @@ st.caption("一人公司也要记账。三种记法：手填、跟 AI 说一句�
 
 s = finance.summary()
 c1, c2, c3, c4 = st.columns(4)
-c1.metric(f"{s['month']} 收入", f"¥{s['income']:.1f}")
-c2.metric(f"{s['month']} 支出", f"¥{s['expense']:.1f}")
-c3.metric("净额", f"¥{s['net']:.1f}", delta=None if s["net"] == 0 else f"{s['net']:+.1f}")
+c1.metric(f"{s['month']} 收入", f"¥{s['income']:,.2f}")
+c2.metric(f"{s['month']} 支出", f"¥{s['expense']:,.2f}")
+c3.metric("净额", f"¥{s['net']:,.2f}", delta=None if s["net"] == 0 else f"{s['net']:+,.2f}")
 c4.metric("记账笔数", s["count"])
 
 st.divider()
@@ -21,17 +21,17 @@ st.divider()
 tab1, tab2, tab3 = st.tabs(["📝 手动记", "💬 跟阿托说", "🤖 其他 agent 记"])
 
 with tab1:
+    in_type = st.radio("类型", ["收入", "支出"], horizontal=True, key="fin_type")
+    cats = finance.CATEGORIES_INCOME if in_type == "收入" else finance.CATEGORIES_EXPENSE
     col1, col2 = st.columns(2)
     with col1:
-        in_type = st.radio("类型", ["收入", "支出"], horizontal=True, key="fin_type")
         amount = st.number_input("金额（元）", min_value=0.1, max_value=999999.0,
-                                 step=0.1, key="fin_amount")
-        cats = finance.CATEGORIES_INCOME if in_type == "收入" else finance.CATEGORIES_EXPENSE
-        category = st.selectbox("分类", cats, key="fin_cat")
-    with col2:
+                                 step=0.1, format="%.2f", key="fin_amount")
         note = st.text_input("备注", key="fin_note", placeholder="例：爬虫定制单")
+    with col2:
+        category = st.selectbox("分类", cats, key="fin_cat")
         source = st.text_input("来源", key="fin_source", placeholder="例：闲鱼 / 小红书 / 老客复购")
-    if st.button("💾 记账", type="primary", use_container_width=True):
+    if st.button("💾 记账", type="primary"):
         rec = finance.add("income" if in_type == "收入" else "expense", amount, note,
                           category=category, source=source)
         st.toast(f"已记账：{'收入' if rec['type']=='income' else '支出'} ¥{rec['amount']}")
@@ -73,10 +73,10 @@ st.divider()
 st.markdown("### 近 30 天流水")
 records = finance.list_records(30)
 if records:
-    table = ["| 日期 | 类型 | 金额 | 分类 | 备注 | 来源 |", "|---|---|---|---|---|---|"]
+    table = ["| 日期 | 类型 | 金额 | 分类 | 备注 | 来源 |", "|---|---|--:|---|---|---|"]
     for r in records:
         icon = "🟢 收入" if r["type"] == "income" else "🔴 支出"
-        table.append(f"| {r['date']} | {icon} | ¥{r['amount']} | {r['category']} "
+        table.append(f"| `{r['date']}` | {icon} | `¥{float(r['amount']):,.2f}` | {r['category']} "
                      f"| {r['note']} | {r['source']} |")
     st.markdown("\n".join(table))
 else:
@@ -84,7 +84,7 @@ else:
 
 if s["by_category"]:
     with st.expander("📊 分类明细"):
-        cat_lines = ["| 分类 | 净额 |", "|---|---|"]
+        cat_lines = ["| 分类 | 净额 |", "|---|--:|"]
         for cat, v in sorted(s["by_category"].items(), key=lambda x: -abs(x[1])):
-            cat_lines.append(f"| {cat} | ¥{v:+.1f} |")
+            cat_lines.append(f"| {cat} | `¥{v:+,.2f}` |")
         st.markdown("\n".join(cat_lines))

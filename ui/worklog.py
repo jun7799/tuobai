@@ -35,7 +35,7 @@ with tab1:
     st.caption("确认后会：AI 总结今日经营数据 + 你的补充 → 生成日志 → 上传云端")
 
 with tab2:
-    if st.button("🤖 AI 总结今天并提交日志（自动模式）", type="primary", use_container_width=True):
+    if st.button("🤖 AI 总结今天并提交日志（自动模式）", type="primary"):
         with st.status("生成日志中…（AI 总结 + 经营数据汇总 + 上传）", expanded=True):
             path, msg = worklog.submit(None, summarize=True)
         if "已上传" in msg:
@@ -69,7 +69,7 @@ with tab_hist:
 
 with tab_review:
     st.caption("AI 汇总日志 + 财务 + 商机数据，生成经营复盘")
-    if st.button("📊 生成本周经营回顾", type="primary", use_container_width=True):
+    if st.button("📊 生成本周经营回顾", type="primary"):
         with st.status("AI 复盘生成中…"):
             try:
                 # 汇总数据

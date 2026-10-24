@@ -9,27 +9,25 @@ sys.path.insert(0, str(Path(__file__).parent))
 import streamlit as st  # noqa: E402
 
 st.set_page_config(page_title="托摆 · 把技能摆到路边去", page_icon="🛵",
-                   layout="wide", initial_sidebar_state="expanded")
+                   layout="wide", initial_sidebar_state="auto")
 
 st.markdown("""
 <style>
 :root {
     --bg: #FDFCF9; --bg-alt: #F5F2EA; --surface: #FFFFFF;
-    --ink: #231A10; --ink-2: #5A4E40; --ink-3: #A69C8C;
+    --ink: #231A10; --ink-2: #5A4E40; --ink-3: #7D7262;
     --accent: #EA580C; --accent-deep: #C2410C; --accent-soft: #FBEED9;
     --seal-red: #C0391A;
     --line: #EAE6DC; --term: #26180D; --term-ink: #D9CFBB;
     --mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
     --serif: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
 }
-/* ---------- 县城诗意：三色装订线 + 纸颗粒（伪元素，全站签名） ---------- */
+/* ---------- 县城诗意：三色装订线 + 纸颗粒（颗粒作背景，不盖图片） ---------- */
 .stApp::before{content:"";position:fixed;top:0;left:0;right:0;height:4px;z-index:999;
     pointer-events:none;
     background:repeating-linear-gradient(90deg,
       #C0391A 0 60px,#FDFCF9 60px 120px,#2C4F8F 120px 180px);opacity:.6}
-.stApp::after{content:"";position:fixed;inset:0;z-index:998;pointer-events:none;
-    opacity:.14;mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .35 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.stApp{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .35 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-color:var(--bg)}
 /* ---------- 排版（正文黑体保可用性，大标题衬线给哲学感） ---------- */
 html, body, .stApp, p, span, div, input { font-family: -apple-system,
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; }
@@ -39,10 +37,12 @@ h1 { font-size: 2rem !important; font-weight: 700 !important; color: var(--ink) 
 h2 { font-size: 1.35rem !important; font-weight: 700 !important; color: var(--ink) !important;
      font-family: var(--serif) !important; }
 h3 { font-size: 1.05rem !important; font-weight: 600 !important; color: var(--ink) !important; }
-.big-title { font-size: 2.3rem; font-weight: 700; color: var(--ink);
-             line-height: 1.2; letter-spacing: .02em; font-family: var(--serif); }
+.big-title { font-size: 2.3rem !important; font-weight: 700 !important; color: var(--ink);
+             line-height: 1.2 !important; letter-spacing: .02em; font-family: var(--serif) !important;
+             margin: 0 !important; }
 .big-title .stamp { color: var(--seal-red); }
-.sub-title { font-size: 1.02rem; color: var(--ink-2); line-height: 1.6; }
+.sub-title { font-size: 1.02rem !important; color: var(--ink-2); line-height: 1.6;
+             margin: .75rem 0 0 !important; max-width: 46rem; }
 /* 印章：红底竖排小方章 */
 .seal-stamp{display:inline-flex;align-items:center;justify-content:center;
     background:var(--seal-red);color:#F5EFDF;font-family:var(--serif);
@@ -55,6 +55,9 @@ h3 { font-size: 1.05rem !important; font-weight: 600 !important; color: var(--in
     display:inline-block;margin-right:.45em;vertical-align:baseline}
 code, .stCode { font-family: var(--mono) !important; }
 strong { color: var(--ink); }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+[data-testid="stMainBlockContainer"] { padding-top: 3.5rem; }
+h2 { margin-bottom: 0 !important; }
 /* ---------- 侧边栏 ---------- */
 [data-testid="stSidebar"] { background: var(--bg-alt); border-right: 1px solid var(--line); }
 [data-testid="stSidebar"] .stButton > button { width: 100%; }
@@ -78,13 +81,21 @@ strong { color: var(--ink); }
 /* ---------- 指标卡/Metric ---------- */
 [data-testid="stMetricValue"] { font-family: var(--mono); font-weight: 700;
     color: var(--ink); }
-[data-testid="stMetricLabel"] { font-size: 0.8rem; color: var(--ink-3) !important; }
+[data-testid="stMetricLabel"] { font-size: 0.8rem; color: var(--ink-2) !important; }
+[data-testid="stMetricValue"] { font-variant-numeric: tabular-nums; }
 /* ---------- 卡片与容器 ---------- */
-.module-card {
-    border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1rem;
-    background: var(--surface); height: 100%;
+.nav-card { height: 6.25rem; }
+.nav-card .nm { font-weight: 700; font-size: 1rem; color: var(--ink); }
+.nav-card .ds { color: var(--ink-2); font-size: .8rem; line-height: 1.5; margin-top: .25rem; }
+[class*="st-key-nav_"] { position: relative; background: var(--surface);
     transition: border-color .15s cubic-bezier(0.23,1,0.32,1); }
-.module-card:hover { border-color: var(--accent); }
+[class*="st-key-nav_"]:hover { border-color: var(--accent) !important; }
+[class*="st-key-nav_"] [data-testid="stElementContainer"]:has(button) {
+    position: absolute; inset: 0; z-index: 2; }
+[class*="st-key-nav_"] .stButton, [class*="st-key-nav_"] .stButton > button {
+    width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+[class*="st-key-svc_"] [data-testid="stVerticalBlock"] { gap: .5rem; }
+[class*="st-key-svcrow_"] { margin-bottom: 1.5rem; }
 [data-testid="stVerticalBlock"] > [data-testid="stVerticalBlockBorderWrapper"] {
     border-radius: 10px; border-color: var(--line) !important; }
 /* ---------- 终端块（st.code） ---------- */
@@ -100,13 +111,36 @@ strong { color: var(--ink); }
 a { color: var(--accent); }
 /* st.info 蓝色提示条 → 暖色系（保持信息语义但不破坏配色） */
 [data-testid="stAlert"] { border-radius: 10px; }
-[data-testid="stAlert"] info, div[data-baseweb="notification"] {
+[data-testid="stAlertContainer"]:has([data-testid="stAlertContentInfo"]) {
     background-color: var(--accent-soft) !important;
-    border-left: 3px solid var(--accent) !important;
+    border-left: 3px solid var(--accent); border-radius: 10px;
     color: var(--ink-2) !important; }
-div[data-baseweb="notification"] svg { fill: var(--accent-deep) !important; }
+[data-testid="stAlertContentInfo"], [data-testid="stAlertContentInfo"] p {
+    color: var(--ink-2) !important; }
+[data-testid="stAlertContentInfo"] svg { fill: var(--accent-deep) !important; }
 [data-testid="stChatInput"] textarea { border-radius: 8px; border-color: var(--line); }
+[data-testid="stTextInputRootElement"], [data-testid="stNumberInputContainer"],
+[data-testid="stTextAreaRootElement"], [data-testid="stSelectbox"] input:not([disabled]) ~ div,
+[data-testid="stSelectbox"] div:has(> input) {
+    background: var(--surface) !important; border: 1px solid var(--line) !important;
+    border-radius: 8px !important; }
+[data-testid="stTextInputRootElement"]:focus-within, [data-testid="stNumberInputContainer"]:focus-within,
+[data-testid="stTextAreaRootElement"]:focus-within,
+[data-testid="stSelectbox"] div:has(> input):focus-within { border-color: var(--accent) !important; }
+[data-testid="stTextAreaRootElement"] textarea, [data-testid="stNumberInputContainer"] input {
+    background: transparent !important; }
+/* 表格里的行内代码（数字等宽）跟正文同字号 */
+[data-testid="stMarkdownContainer"] td code, [data-testid="stMarkdownContainer"] th code {
+    font-size: .9em; background: transparent; color: var(--ink); padding: 0; }
+[data-testid="stMarkdownContainer"] table { width: 100%; }
 ::selection { background: var(--accent-soft); color: var(--accent-deep); }
+@media (max-width: 1200px) {
+    [data-testid="stColumn"]:has([class*="st-key-nav_"]) { min-width: calc(50% - 1rem) !important; } }
+@media (max-width: 768px) {
+    [data-testid="stMainBlockContainer"] { padding: 3rem 1rem 6rem; }
+    [data-testid="stColumn"]:has([data-testid="stMetric"]) {
+        min-width: calc(50% - 1rem) !important; flex: 1 1 calc(50% - 1rem) !important; }
+    .big-title { font-size: 1.7rem !important; } }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; } }
 </style>
@@ -134,13 +168,9 @@ def ensure_state() -> None:
 def main() -> None:
     ensure_state()
 
-    # 侧边栏顶部：品牌 logo（自定义内容先写，渲染在导航列表上方）
-    with st.sidebar:
-        _c1, _c2 = st.columns([1, 2.4], vertical_alignment="center")
-        with _c1:
-            st.image(str(Path(__file__).parent / "assets" / "logo.png"), width=44)
-        with _c2:
-            st.markdown("**托摆** 把技能摆到路边去")
+    # 侧边栏顶部：品牌 logo（st.logo 固定渲染在导航上方）
+    _logo = str(Path(__file__).parent / "assets" / "logo.png")
+    st.logo(_logo, size="large")
 
     # 健康检查（一次会话只测一次）
     if st.session_state.api_ok is None:
@@ -154,7 +184,7 @@ def main() -> None:
     pages = {
         "开始": [
             st.Page("ui/home.py", title="工作台", default=True, icon="🏠"),
-            st.Page("ui/explore.py", title="找方向", icon="💬"),
+            st.Page("ui/explore.py", title="找方向", icon="🧭"),
             st.Page("ui/market.py", title="看同行", icon="🕵️"),
         ],
         "经营": [
@@ -173,7 +203,6 @@ def main() -> None:
     pg.run()
 
     with st.sidebar:
-        st.divider()
         st.caption("🛵 托摆 · WaytoAGI 1024 OPC 赛道")
         problems = settings.validate()
         for p in problems:

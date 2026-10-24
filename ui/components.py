@@ -21,6 +21,7 @@ def chat_assistant(page_key: str, hint: str, extract_format: str,
     on_confirm:     用户点确认后回调（写入存储），抛异常则显示错误
     """
     st.markdown("**💬 跟阿托说，我来帮你填**")
+    st.caption(f"在页面最底部的输入框里说一句：{hint}")
     if prompt := st.chat_input(hint, key=f"assist_{page_key}"):
         with st.spinner("AI 提取中…"):
             try:
@@ -39,7 +40,7 @@ def chat_assistant(page_key: str, hint: str, extract_format: str,
         with st.container(border=True):
             st.markdown("🔎 **AI 帮你填好了，确认一下**")
             preview(data)
-            c1, c2 = st.columns(2)
+            c1, c2, _ = st.columns([1, 1, 2])
             with c1:
                 if st.button("✅ 确认保存", key=f"ok_{page_key}", type="primary",
                              use_container_width=True):
