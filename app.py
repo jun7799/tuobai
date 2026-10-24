@@ -14,11 +14,11 @@ st.set_page_config(page_title="托摆 · 把技能摆到路边去", page_icon="�
 st.markdown("""
 <style>
 :root {
-    --bg: #F5EFDF; --bg-alt: #EDE5D0; --surface: #FFFDF7;
-    --ink: #2A1E13; --ink-2: #5C4A38; --ink-3: #A6967D;
+    --bg: #FDFCF9; --bg-alt: #F5F2EA; --surface: #FFFFFF;
+    --ink: #231A10; --ink-2: #5A4E40; --ink-3: #A69C8C;
     --accent: #EA580C; --accent-deep: #C2410C; --accent-soft: #FBEED9;
     --seal-red: #C0391A;
-    --line: #E3D9C2; --term: #26180D; --term-ink: #D9CFBB;
+    --line: #EAE6DC; --term: #26180D; --term-ink: #D9CFBB;
     --mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
     --serif: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
 }
@@ -26,9 +26,9 @@ st.markdown("""
 .stApp::before{content:"";position:fixed;top:0;left:0;right:0;height:4px;z-index:999;
     pointer-events:none;
     background:repeating-linear-gradient(90deg,
-      #C0391A 0 60px,#F5EFDF 60px 120px,#2C4F8F 120px 180px);opacity:.6}
+      #C0391A 0 60px,#FDFCF9 60px 120px,#2C4F8F 120px 180px);opacity:.6}
 .stApp::after{content:"";position:fixed;inset:0;z-index:998;pointer-events:none;
-    opacity:.35;mix-blend-mode:multiply;
+    opacity:.14;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .35 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
 /* ---------- 排版（正文黑体保可用性，大标题衬线给哲学感） ---------- */
 html, body, .stApp, p, span, div, input { font-family: -apple-system,
