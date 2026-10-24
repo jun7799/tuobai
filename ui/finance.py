@@ -59,10 +59,15 @@ with tab2:
 
 with tab3:
     cli_card("给其他 agent 的记账入口", [
+        "# 成单后自动记一笔收入",
         r'.\.venv\Scripts\python.exe -X utf8 -m core.finance add income 69 "爬虫定制单" --category 服务收入 --source 闲鱼',
+        "",
+        "# 记一笔支出（工具/API 成本）",
         r'.\.venv\Scripts\python.exe -X utf8 -m core.finance add expense 15.9 "生图API费" --category API费用',
+        "",
+        "# 当月汇总（返回 JSON，可直接解析）",
         r'.\.venv\Scripts\python.exe -X utf8 -m core.finance summary',
-    ], note="成单后让 agent 自动记一笔；summary 返回 JSON 可直接被 agent 解析。项目内置 skill：opc-worklog")
+    ], note="成单后让 agent 自动记一笔。项目内置 skill：opc-worklog")
 
 st.divider()
 st.markdown("### 近 30 天流水")

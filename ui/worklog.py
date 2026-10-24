@@ -46,9 +46,12 @@ with tab2:
 
 with tab3:
     cli_card("给其他 agent 的日志入口", [
+        "# 每日收工：AI 自动总结今天经营并上传云端",
         r'.\.venv\Scripts\python.exe -X utf8 -m core.worklog auto',
-        r'.\.venv\Scripts\python.exe -X utf8 -m core.worklog submit --content "今天完成了XX"',
-    ], note="auto=AI自动总结今天经营并上传；submit=带内容提交。上传到 ubuntu@124.221.77.217:~/worklogs/machines/JUN7799-OPC/")
+        "",
+        "# 带内容提交（agent 干完活顺手记一笔）",
+        r'.\.venv\Scripts\python.exe -X utf8 -m core.worklog submit --content "今天完成了名片模块"',
+    ], note="上传到 ubuntu@124.221.77.217:~/worklogs/machines/JUN7799-OPC/，与双机日志体系互通")
 
 st.divider()
 

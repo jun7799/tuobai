@@ -118,11 +118,15 @@ with tab2:
 
 with tab3:
     cli_card("给其他 agent 的商机入口", [
+        "# 录入商机（客户来问价就记一条）",
         r'.\.venv\Scripts\python.exe -X utf8 -m core.leads add "宠物店王老板" --source 闲鱼 --need "每月5张海报" --amount 300',
-        r'.\.venv\Scripts\python.exe -X utf8 -m core.leads add "李姐" --source 小红书 --need "改简历" --stage 已报价 --amount 99',
+        "",
+        "# 成交后更新阶段（id 从 add 返回或 list 查）",
         r'.\.venv\Scripts\python.exe -X utf8 -m core.leads set-stage abc12345 已成交',
-        r'.\.venv\Scripts\python.exe -X utf8 -m core.leads list',
-    ], note="成交后提醒 agent 记账：python -m core.finance add income ...（商机和账本就串起来了）")
+        "",
+        "# 成交记得顺手记账（商机和账本串起来）",
+        r'.\.venv\Scripts\python.exe -X utf8 -m core.finance add income 300 "海报月单" --category 服务收入 --source 闲鱼',
+    ], note="add 返回记录 id；list 可查全部商机。")
 
 with tab4:
     st.markdown("**客户问「这个多少钱」，把需求丢给阿托**")

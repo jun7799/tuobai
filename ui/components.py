@@ -58,10 +58,9 @@ def chat_assistant(page_key: str, hint: str, extract_format: str,
 
 
 def cli_card(title: str, commands: list[str], note: str = ""):
-    """「其他 agent 调用」入口卡：显眼展示可复制命令。"""
+    """「其他 agent 调用」入口卡：整块一段命令，一次复制全拿。"""
     with st.container(border=True):
-        st.markdown(f"**🤖 {title}**（其他 AI agent / 机器可直接调用）")
-        for cmd in commands:
-            st.code(cmd, language="bash")
+        st.markdown(f"**🤖 {title}**（其他 AI agent / 机器可直接调用，整块复制即可）")
+        st.code("\n".join(commands), language="bash")
         if note:
             st.caption(note)
