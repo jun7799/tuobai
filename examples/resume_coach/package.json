@@ -1,0 +1,123 @@
+{
+  "positioning": {
+    "name": "简历急救站",
+    "one_liner": "帮求职者按猎头视角改简历，24小时出稿",
+    "target_customer": "想跳槽或投大厂、简历投了没回音的职场人",
+    "tiers": [
+      {
+        "name": "基础版",
+        "price": 29,
+        "includes": "逐句批注+问题清单，自己照着改"
+      },
+      {
+        "name": "标准版",
+        "price": 69,
+        "includes": "猎头视角全文重写，24小时交付一版定稿"
+      },
+      {
+        "name": "豪华版",
+        "price": 149,
+        "includes": "简历重写+自我介绍润色+投递建议，含2次修改"
+      }
+    ]
+  },
+  "service_card": {
+    "title": "简历改到猎头愿意多看一眼",
+    "highlights": [
+      "猎头视角逐句打磨，只留有效信息",
+      "24小时内出稿，赶投递来得及",
+      "已改60+份简历，多位客户拿到大厂面试",
+      "交付前先给你改前对比样，满意再付尾款"
+    ],
+    "faq": [
+      {
+        "q": "多久能出稿？",
+        "a": "标准版24小时内交付，急单可说明情况，一般也能插队加急。"
+      },
+      {
+        "q": "改简历是重写还是微调？",
+        "a": "标准版以上是按猎头筛选逻辑重写，保留你的真实经历，不改事实只改表达。"
+      },
+      {
+        "q": "需要我提供什么？",
+        "a": "现有简历+目标岗位JD（或岗位方向），有面试 feedback 更好。"
+      }
+    ],
+    "delivery_standard": "收到简历和目标岗位后24小时内交付修改稿，附一页修改说明（改了什么、为什么改）。改前先确认岗位方向，避免方向跑偏。",
+    "revision_policy": "标准版含1次小修改，豪华版含2次，7天内有效。"
+  },
+  "xianyu": {
+    "title": "简历修改润色 猎头视角 24小时出稿 大厂面试向",
+    "desc": "投了十几份简历没回音？问题多半不在经历少，而在表达没踩到HR的筛选项。\n\n我做过猎头方向的简历筛选，帮60+位求职者改过简历，不少人改完拿到了大厂面试。\n\n服务内容：\n1️⃣ 猎头视角逐句过一遍，删掉废话、放大亮点\n2️⃣ 按目标岗位JD重排重点，让关键词对上筛选逻辑\n3️⃣ 交付修改稿+修改说明，你不仅拿到简历，还知道怎么改\n\n交付说明：发我现有简历+目标岗位（或方向），24小时内出稿，附一页修改说明。含1次小修改，7天内有效。\n\n售后说明：改前先给对比样，不满意不勉强。改到你能放心投出去为止（范围内）。",
+    "price": 69,
+    "image_prompts": [
+      "Flat illustration style, warm orange and cream color palette, a focused professional reviewing a resume document with a magnifying glass, laptop and coffee cup on desk, subtle checkmark motifs floating around, cozy modern workspace scene, no text, clean composition, soft shadows"
+    ]
+  },
+  "xhs": {
+    "cover_emoji": "📄",
+    "cover_title": "60+份简历改完后，我发现了3个通病",
+    "cover_subtitle": "改掉它们，面试邀约翻倍",
+    "title": "投简历没回音？多半是这3个通病📋",
+    "body_md": "改了60多份简历，拿到大厂面试的人都有一个共同点：简历里每句话都在回答HR关心的问题。\n\n## 通病1：写职责不写结果\n\n「负责公众号运营」这种话HR看一万遍了。\n\n改成：涨粉多少、转化多少、做了什么动作。✍️\n\n## 通病2：经历堆砌，没有重点\n\nHR平均看一份简历不到30秒。⏱️\n\n把和目标岗位最相关的经历放最前面，其他的收着写。\n\n## 通病3：自我评价全是形容词\n\n「抗压能力强、执行力高」——谁不会写？😅\n\n用一个具体事例替代三个形容词。\n\n---\n\n我提供猎头视角的简历修改，24小时出稿，附修改说明，让你知其然也知其所以然。\n\n投递季快到了，早改早投。🚀\n\n#简历修改 #求职 #跳槽 #大厂面试 #简历优化 #求职干货 #秋招 #简历模板",
+    "theme_hint": "professional"
+  },
+  "talk_track": {
+    "opening_30s": "你好呀！看到你想改简历~ 方便说下你现在的方向吗？是把现有简历发我看看，还是先聊聊岗位目标？都可以，不着急😊",
+    "comment_replies": [
+      {
+        "scene": "评论区问：怎么下单/多少钱",
+        "reply": "标准版69，24小时出稿~ 拍之前可以先发简历给我看看，我告诉你适不适合改、怎么改合适👍"
+      },
+      {
+        "scene": "评论区问：靠谱吗/效果怎么样",
+        "reply": "已经改过60多份简历了，不少朋友改完拿到了大厂面试邀约。可以先发我看看现在的版本，我给你指出几个具体问题，你再决定要不要改～"
+      },
+      {
+        "scene": "评论区质疑：太贵了/自己也能做",
+        "reply": "自己改确实可以！我主要提供的是筛选视角——我知道HR看简历时先看什么、跳过什么。预算有限的话基础版29，给你逐句批注，自己照着改也很有用😊"
+      }
+    ],
+    "inquiry_replies": [
+      {
+        "scenario": "私信询价：只问多少钱",
+        "script": "标准版69，猎头视角全文重写+修改说明，24小时出稿。方便发我简历和目标岗位吗？我看一眼就知道适合哪个档位～"
+      },
+      {
+        "scenario": "私信砍价：能便宜点吗",
+        "script": "价格是按工作量和效果定的，不太好砍哈🙏 不过预算有限的话，基础版29给你逐句批注+问题清单，自己照着改，性价比很合适，要不要试试？"
+      },
+      {
+        "scenario": "私信需求模糊：我想做但是说不清",
+        "script": "没事，我问你3个问题就好：1️⃣ 你目前做什么岗位、几年经验？2️⃣ 想投什么方向的公司或岗位？3️⃣ 投了多少份、有回音吗？回答完我就能判断怎么帮你改。"
+      }
+    ],
+    "price_objection": "可以算笔账：一份工作月薪按1万算，多等一个月面试机会就少几千。69块买一个更早到手的面试机会，加上我还附修改说明，下次你自己也会改了。预算紧可以选29的基础版，批注版也很实用。"
+  },
+  "video": {
+    "script_30s": "投了二十份简历没回音？问题多半不在你经历少，在表达。我做过猎头方向的筛选，帮60多个人改过简历，不少人改完拿到了大厂面试。我干的事很简单：按HR看简历的顺序，逐句帮你重写，删废话、放大结果。24小时出稿，还附一份修改说明，下次你自己也会改。简历发我，先看问题再决定改不改。",
+    "storyboard": [
+      {
+        "shot": "镜头1",
+        "narration": "投了二十份简历没回音？问题多半不在你经历少，在表达。",
+        "image_prompt": "Flat illustration, warm tones, a frustrated young person at a desk staring at a laptop showing an inbox with zero replies, crumpled papers around, cozy room, no text"
+      },
+      {
+        "shot": "镜头2",
+        "narration": "我做过猎头方向的筛选，帮60多个人改过简历，不少人改完拿到了大厂面试。",
+        "image_prompt": "Flat illustration, warm palette, a professional character with a magnifying glass reviewing a stack of resume documents, office building silhouettes in background window, no text"
+      },
+      {
+        "shot": "镜头3",
+        "narration": "我干的事很简单：按HR看简历的顺序，逐句帮你重写，删废话、放大结果。",
+        "image_prompt": "Flat illustration, close-up of hands editing a document with a red pen, highlighted lines and checkmarks, warm desk lamp lighting, no text"
+      },
+      {
+        "shot": "镜头4",
+        "narration": "24小时出稿，还附一份修改说明，下次你自己也会改。简历发我，先看问题再决定改不改。",
+        "image_prompt": "Flat illustration, a smiling person receiving a completed document with a small clock icon showing 24 hours, warm sunset colors through window, hopeful mood, no text"
+      }
+    ]
+  },
+  "_warnings": []
+}

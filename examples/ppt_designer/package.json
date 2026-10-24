@@ -1,0 +1,128 @@
+{
+  "positioning": {
+    "name": "丑PPT拯救",
+    "one_liner": "把丑PPT改成高级感汇报页，服务职场人",
+    "target_customer": "要汇报、路演、竞标，PPT拿不出手的上班族",
+    "tiers": [
+      {
+        "name": "基础版",
+        "price": 29,
+        "includes": "单页美化1页，按你的模板风格改"
+      },
+      {
+        "name": "标准版",
+        "price": 69,
+        "includes": "整套5页美化+统一配色版式，48小时交付"
+      },
+      {
+        "name": "豪华版",
+        "price": 149,
+        "includes": "整套10页深度重做+逻辑梳理+路演版式建议"
+      }
+    ]
+  },
+  "service_card": {
+    "title": "丑PPT改高级感汇报页｜职场汇报/竞标路演",
+    "highlights": [
+      "做过40+份汇报PPT，含3场竞标路演",
+      "只改视觉不动你的内容逻辑",
+      "统一配色和版式，一眼像认真做的",
+      "48小时交付，急单可聊"
+    ],
+    "faq": [
+      {
+        "q": "改完会不会跟原来内容差很多？",
+        "a": "不会，只调整排版、配色、图表样式，内容和数据不动，改动前会先跟你确认风格。"
+      },
+      {
+        "q": "需要你提供什么？",
+        "a": "把原PPT发过来，再说一句用途（周报/竞标/路演）和喜欢的风格，有参考图更好。"
+      },
+      {
+        "q": "多久能交付？",
+        "a": "常规48小时内，页数多会提前说好时间，急单可以加急处理。"
+      }
+    ],
+    "delivery_standard": "收到文件后先确认风格方向，再逐页美化，交付PSD可编辑源文件加导出PDF，48小时内完成。",
+    "revision_policy": "交付后含2轮免费微调，改到你满意为止。"
+  },
+  "xianyu": {
+    "title": "丑PPT改高级感汇报页 竞标路演美化 48h交付",
+    "desc": "每周汇报被领导说PPT丑？竞标路演页面拿不出手？我来帮你救。已帮人改过40+份汇报PPT，含3场竞标路演，经验够用。\n\n【服务内容】\n1️⃣ 单页美化：排版、配色、对齐，一页焕新\n2️⃣ 整套改造：统一风格，字体配色版式全理顺\n3️⃣ 路演版：突出重点数据，评委看得舒服\n\n【交付说明】\n发我原PPT+用途+喜欢的风格，48小时内交付可编辑文件和PDF，内容数据不动，只改颜值。\n\n【售后说明】\n交付后含2轮免费微调，风格方向先确认再动手，不合适免费改。\n\n下单前把页数和需求说下，我看看怎么报最合适。",
+    "price": 69,
+    "image_prompts": [
+      "flat illustration of a before-and-after presentation slide transformation, left side messy colorful cluttered slides, right side clean elegant minimal business slide, warm orange and cream color palette, a designer working at a laptop, cozy office scene, no text in image"
+    ]
+  },
+  "xhs": {
+    "cover_emoji": "📊",
+    "cover_title": "40+份PPT改完后，我悟了",
+    "cover_subtitle": "丑PPT真的能救",
+    "title": "汇报PPT被说丑？我帮你改成高级感📊",
+    "body_md": "## 你的内容不差，就是页面拖后腿\n做方案熬到凌晨，结果一打开PPT：字号不齐、配色像彩虹、图表糊成马赛克😵‍💫\n领导看的是你的思路，但第一眼看到的是页面。\n\n## 我做了什么\n帮朋友和同事改过 **40+份汇报PPT**，其中3场是竞标路演🎯\n不改内容、不动数据，只把排版、配色、版式理顺，改完明显不一样。\n\n## 怎么改\n✅ 统一字体和配色，去掉花里胡哨\n✅ 图表重新排版，重点数据放大\n✅ 每页一个重点，别堆满\n\n## 适合谁\n📢 周报月报总是被挑刺的打工人\n🏆 要竞标路演、一页定成败的人\n🎓 答辩汇报想体面一点的同学\n\n不用会设计，把文件丢过来就行，48小时还你一份拿得出手的汇报页✨\n\n#PPT美化 #职场汇报 #竞标路演 #PPT排版 #打工人日常 #PPT模板 #职场干货 #汇报PPT",
+    "theme_hint": "professional"
+  },
+  "talk_track": {
+    "opening_30s": "你好呀～看到你提到PPT的事，是要做汇报还是路演呀？我可以帮你把页面改得干净有质感，内容和数据都不动，改前先确认风格，你把原文件发我看看就知道能不能救。",
+    "comment_replies": [
+      {
+        "scene": "评论区问：怎么下单/多少钱",
+        "reply": "单页29，整套5页69，10页深度重做149～你说下页数和用途，我帮你挑合适的方案。"
+      },
+      {
+        "scene": "评论区问：靠谱吗/效果怎么样",
+        "reply": "改过40+份汇报PPT，含3场竞标路演。改前先确认风格，交付后有2轮免费微调，不满意就改到你点头。"
+      },
+      {
+        "scene": "评论区质疑：太贵了/自己也能做",
+        "reply": "自己抠确实可以，就是费时间～一页对齐配色排版至少半小时，5页69块，把晚上省出来睡觉也挺值的😄"
+      }
+    ],
+    "inquiry_replies": [
+      {
+        "scenario": "私信询价：只问多少钱",
+        "script": "单页29，5页整套69，10页深度重做149。方便说下是周报、竞标还是路演吗？用途不同改法不一样，我看看哪个适合你～"
+      },
+      {
+        "scenario": "私信砍价：能便宜点吗",
+        "script": "价格是按页数和工时算的，不太能压哈。如果预算紧，可以先试单页29看看效果，满意再把整套交给我，这样风险也小～"
+      },
+      {
+        "scenario": "私信需求模糊：我想做但是说不清",
+        "script": "不着急，我问三个问题：1️⃣这个PPT是什么场合用？2️⃣现在最不满意的是配色还是排版？3️⃣有没有觉得好看的参考图？有这三个答案我就能给你出方案了。"
+      }
+    ],
+    "price_objection": "一页自己抠要半小时起步，5页就是两三个晚上。69块换48小时交付加2轮微调，等于把你加班的时间买回来了，比熬夜值。"
+  },
+  "video": {
+    "script_30s": "你的PPT是不是也这样：字号不齐，配色像彩虹？我帮人改过40多份汇报PPT，还有3场竞标路演。我不动你的内容和数据，只把排版、配色、图表理顺，改完一眼就专业。48小时交付，还带两轮免费微调。汇报别让页面拖后腿，来聊聊。",
+    "storyboard": [
+      {
+        "shot": "镜头1：打开一个乱糟糟的PPT",
+        "narration": "你的PPT是不是也这样：字号不齐，配色像彩虹？",
+        "image_prompt": "flat illustration, a laptop screen showing a messy cluttered presentation slide with rainbow colors, a tired office worker sighing, warm cream background, no text"
+      },
+      {
+        "shot": "镜头2：展示改前改后对比",
+        "narration": "我帮人改过40多份汇报PPT，还有3场竞标路演。",
+        "image_prompt": "flat illustration, split screen before and after slide transformation, left chaotic right clean minimal elegant, arrows connecting them, warm orange palette, no text"
+      },
+      {
+        "shot": "镜头3：设计师在电脑前逐页调整",
+        "narration": "我不动你的内容和数据，只把排版、配色、图表理顺，改完一眼就专业。",
+        "image_prompt": "flat illustration, designer hands adjusting a clean business slide layout on a monitor, color swatches and grid lines nearby, cozy desk with coffee, warm tones, no text"
+      },
+      {
+        "shot": "镜头4：交付文件和微笑客户",
+        "narration": "48小时交付，还带两轮免费微调。",
+        "image_prompt": "flat illustration, a happy office worker giving thumbs up next to a laptop showing a polished presentation, checkmark icons floating, warm sunny palette, no text"
+      },
+      {
+        "shot": "镜头5：号召互动",
+        "narration": "汇报别让页面拖后腿，来聊聊。",
+        "image_prompt": "flat illustration, a speech bubble and an envelope icon above a clean minimal slide, soft warm gradient background, inviting mood, no text"
+      }
+    ]
+  },
+  "_warnings": []
+}

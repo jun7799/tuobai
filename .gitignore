@@ -1,0 +1,13 @@
+# 敏感与本地数据
+.env
+data/
+cat_*.json
+
+# 运行产物（可复现）
+output/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 保留：examples/（演示兜底素材）、assets/（logo与海报）、e2e_shots/（验证截图）

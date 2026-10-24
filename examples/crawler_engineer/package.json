@@ -1,0 +1,123 @@
+{
+  "positioning": {
+    "name": "爬虫快写",
+    "one_liner": "帮你定制Python爬虫脚本，3天交付",
+    "target_customer": "需要采集数据但不会写代码的电商运营、市场分析和做副业的人",
+    "tiers": [
+      {
+        "name": "基础版",
+        "price": 39,
+        "includes": "单网站采集脚本+使用说明，3天交付"
+      },
+      {
+        "name": "标准版",
+        "price": 69,
+        "includes": "1-3个网站采集+数据导出Excel，含1次反爬调整"
+      },
+      {
+        "name": "豪华版",
+        "price": 149,
+        "includes": "多网站批量采集+定时运行+数据清洗整理，7天维护"
+      }
+    ]
+  },
+  "service_card": {
+    "title": "Python爬虫定制 · 数据采集自动化 · 3天交付",
+    "highlights": [
+      "接过电商客户10万条竞品数据的活，跑得稳",
+      "3天交付，拿到的不是代码是能用的数据",
+      "附使用教程，不会代码也能自己跑",
+      "脚本留了参数入口，换网址自己改一行就行"
+    ],
+    "faq": [
+      {
+        "q": "我不会代码，能用吗？",
+        "a": "能。交付时附图文教程，双击运行那种，跑完自动出Excel表格。"
+      },
+      {
+        "q": "什么数据都能爬吗？",
+        "a": "公开网页数据基本都可以。下前我会先评估，做不了的直说，不收钱。"
+      },
+      {
+        "q": "数据量大、网站有反爬怎么办？",
+        "a": "会加延时、模拟浏览器这些常规处理。真跑不通我会提前告诉你，不硬接。"
+      }
+    ],
+    "delivery_standard": "流程：你描述需求 → 我评估报价 → 付款后3天内交付脚本+教程+示例数据。交付标准：脚本能直接跑通，数据导出成Excel或CSV，字段按你要求整理。",
+    "revision_policy": "交付后3天内出现的小问题免费修，需求变更另算。"
+  },
+  "xianyu": {
+    "title": "Python爬虫定制写脚本 数据采集自动化 3天交付含教程",
+    "desc": "想采集数据但不会写代码？帮你搞定。\n\n【能做什么】\n1️⃣ 爬取公开网页数据：商品价格、评论区、排行榜、招聘信息等\n2️⃣ 多页自动翻页采集，数据自动整理成Excel/CSV\n3️⃣ 需要长期跑的可以加定时运行\n\n【交付内容】\n· 可直接运行的爬虫脚本\n· 图文使用教程（不会代码也能跑）\n· 采集好的示例数据\n\n【交付时间】\n付款后3天内交付，需求复杂的会提前跟你确认时间。\n\n【售后说明】\n交付后3天内脚本跑不通免费修到能用。网站结构变化导致的问题，7天内也帮你处理。\n\n做之前我会先评估你的需求，能做才接，做不了的直接说，不浪费你时间。",
+    "price": 69,
+    "image_prompts": [
+      "Flat illustration style service card, warm orange and cream tones, a laptop showing a data table with rows being automatically filled, small gears and conveyor belt motifs around, a person relaxing with a coffee cup beside the laptop, clean minimal background, no text"
+    ]
+  },
+  "xhs": {
+    "cover_emoji": "🕷️",
+    "cover_title": "10万条数据，3天到手",
+    "cover_subtitle": "不会代码也能自动采集",
+    "title": "帮人写爬虫3年，接单接到忙不过来🕷️",
+    "body_md": "上周一个做电商的姐妹来找我，要采10万条竞品数据。\n\n她原计划招个实习生手动复制，一个月工资三千多。\n\n我写了个脚本，3天交付，跑一晚上就全下来了。💰\n\n## 什么样的人需要爬虫\n\n📊 做电商：盯竞品价格、销量变化\n📈 做市场分析：行业数据、评论区反馈\n💼 找工作：批量收集招聘信息\n✍️ 做自媒体：找选题、扒爆款素材\n\n## 常见的误区\n\n不是所有数据都要爬。\n\n公开的、能正常访问的网页数据，都可以用脚本自动化采集。\n\n一次写好脚本，以后想更新数据，双击跑一下就行。🔄\n\n## 找人写脚本要注意\n\n1️⃣ 先说清需求：采什么网站、要哪些字段、大概多少量\n2️⃣ 让对方先评估，做不了的别硬接\n3️⃣ 确认交付包含教程和示例数据\n\n脚本这东西，能用和看起来能用，差很远。\n\n有数据需求的可以聊聊，帮你看下能不能搞。🕸️\n\n#爬虫 #数据采集 #Python #副业工具 #电商运营 #数据分析 #效率工具 #程序员接单",
+    "theme_hint": "playful-geometric"
+  },
+  "talk_track": {
+    "opening_30s": "你好呀～看你需要采集数据，方便说下是哪类网站、想要哪些数据吗？我先帮你评估下能不能做、大概多久交付，能做的话3天内给你搞定。",
+    "comment_replies": [
+      {
+        "scene": "评论区问：怎么下单/多少钱",
+        "reply": "基础版39（单网站脚本），标准版69（多网站+Excel导出），可以直接拍。不确定选哪个的话说下你的需求，我帮你推荐～"
+      },
+      {
+        "scene": "评论区问：靠谱吗/效果怎么样",
+        "reply": "之前帮一个电商客户采集过10万条竞品数据，一晚上跑完自动出表格。每单交付前我都会先测试跑通，跑不通不接。"
+      },
+      {
+        "scene": "评论区质疑：太贵了/自己也能做",
+        "reply": "自己学也完全可以！不过Python爬虫从入门到能跑通，加上处理各种反爬，起码得折腾一两周。69块买3天交付+教程，算下来就是省时间的钱，看你觉得时间值多少啦～"
+      }
+    ],
+    "inquiry_replies": [
+      {
+        "scenario": "私信询价：只问多少钱",
+        "script": "标准版69，含1-3个网站采集+数据导出Excel。你主要想采哪类网站、大概要多少数据？我评估下选哪个版本合适，简单的39基础版就够。"
+      },
+      {
+        "scenario": "私信砍价：能便宜点吗",
+        "script": "价格是按工作量来的，实在不好压～如果你的需求简单，比如就一个网站采个基础信息，可以走39的基础版，先把功能跑起来，后面不够再升级。"
+      },
+      {
+        "scenario": "私信需求模糊：我想做但是说不清",
+        "script": "没关系，我问你三个问题就行：①你想从哪个网站采数据？②你最想要哪些信息（比如价格、标题、评论）？③这些数据你打算拿来做什么？说完我就能给你出方案。"
+      }
+    ],
+    "price_objection": "咱算笔账：自己学爬虫，光入门加踩反爬的坑起码一两周；招人临时做，一天工资都不少。69块3天交付、含教程和售后修到能用，买的是省下来的时间，这笔账挺划算的。"
+  },
+  "video": {
+    "script_30s": "你有没有试过，想收集点数据，结果复制粘贴抄了一整天？我帮人写Python爬虫脚本，电商竞品、评论区、招聘信息这些公开数据，都能自动采集，跑一晚上全变成Excel表格。之前有个客户要10万条竞品数据，我3天交付，脚本一跑就完事。不会代码也没关系，我附教程，双击就能跑。有数据需求的，评论区聊。",
+    "storyboard": [
+      {
+        "shot": "镜头1",
+        "narration": "你有没有试过，想收集点数据，结果复制粘贴抄了一整天？",
+        "image_prompt": "Flat illustration, warm tones, a tired person at a desk manually copying data from browser into spreadsheet, stacks of papers around, exhausted expression, no text"
+      },
+      {
+        "shot": "镜头2",
+        "narration": "我帮人写Python爬虫脚本，公开数据都能自动采集，跑一晚上全变成Excel表格。",
+        "image_prompt": "Flat illustration, warm tones, a laptop with a browser window on left and a filling spreadsheet on right, arrows flowing between them, small robot helper icon, no text"
+      },
+      {
+        "shot": "镜头3",
+        "narration": "之前有个客户要10万条竞品数据，我3天交付，脚本一跑就完事。",
+        "image_prompt": "Flat illustration, warm tones, a happy client receiving a glowing spreadsheet file from a laptop screen, clock icon showing three days, checkmark badge, no text"
+      },
+      {
+        "shot": "镜头4",
+        "narration": "不会代码也没关系，我附教程，双击就能跑。有数据需求的，评论区聊。",
+        "image_prompt": "Flat illustration, warm tones, a relaxed person sipping coffee while laptop runs by itself with progress bar and green checkmark, open guidebook beside laptop, no text"
+      }
+    ]
+  },
+  "_warnings": []
+}
