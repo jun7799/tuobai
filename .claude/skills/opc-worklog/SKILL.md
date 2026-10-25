@@ -45,6 +45,22 @@ cd <项目根目录>
 
 成交后顺手记账（商机→账本串起来）。
 
+## 用户画像/人设提交（其他 agent 替用户填）
+
+如果你在别的项目里了解这位用户（背景/擅长/方向），可以替他同步画像——
+托摆的定价、文案、名片、同行分析、简历初稿全部自动使用这份画像：
+
+```
+# 先查当前画像，避免覆盖已有信息
+.venv\Scripts\python.exe -X utf8 -m core.profile get
+
+# 提交/补充（merge 语义，只改给出的字段）
+.venv\Scripts\python.exe -X utf8 -m core.profile set --name "俊哥" --background "10年程序员" --strengths "Python,爬虫,AI工作流" --direction "帮小店主做提效工具，单次99起" --services "爬虫定制,Excel自动化"
+```
+
+字段写法：background=职业背景一句话；strengths=擅长点每条≤6字；
+direction=帮谁做什么+定价；services=能独立交付的服务。
+
 ## 使用约定
 
 - 成交一单后：先记账（finance add income），当天结束时 `worklog auto` 会自动带上这笔

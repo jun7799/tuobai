@@ -6,6 +6,7 @@ import json
 import streamlit as st
 
 from core import llm_client, profile as profile_store
+from ui.components import cli_card
 
 SYSTEM = """你是「托摆」的方向顾问，帮用户找到可以变现的技能方向。风格要求：
 - 口语化、接地气，像懂行的朋友聊天，每次回复不超过 150 字
@@ -121,3 +122,19 @@ with c2:
         st.session_state.skill = p["direction"]
         st.session_state.step = "intake"
         st.switch_page("ui/launch.py")
+
+st.divider()
+
+# ---------- 其他 agent 提交画像 ----------
+with st.expander("🤖 其他 agent 提交画像（如果你在别的项目里了解这位用户）"):
+    st.caption("画像贯穿托摆全站——定价、文案、名片、同行分析、简历初稿都用它。"
+               "你比谁都了解用户的话，替他填一份，越准越好用。")
+    cli_card("给其他 agent 的画像入口", [
+        "# 第一步：先查当前画像，避免覆盖已有信息",
+        r'.\.venv\Scripts\python.exe -X utf8 -m core.profile get',
+        "",
+        '# 第二步：提交/补充画像（merge 语义，只改给出的字段）',
+        r'.\.venv\Scripts\python.exe -X utf8 -m core.profile set --name "俊哥" --background "10年程序员，做过电商和爬虫" --strengths "Python,爬虫,AI工作流,自动化" --direction "帮小店主做AI提效工具，单次99起" --services "爬虫定制,Excel自动化,小店海报"',
+    ], note="字段怎么写好：background=职业背景一句话；strengths=擅长点（每条≤6字）；"
+            "direction=帮谁做什么+定价；services=能独立交付的服务。"
+            "填完托摆全站自动生效，无需其他操作。")

@@ -10,7 +10,7 @@ import streamlit as st
 
 from config import PROJECT_ROOT, settings
 from core import card_tpl, llm_client, profile as profile_store
-from ui.components import chat_assistant
+from ui.components import chat_assistant, cli_card
 
 st.markdown("## 📇 立人设")
 st.caption("生成一张可分享的个人名片：发朋友圈、贴社群、当微信头图。服务列表自动带入你已开张的服务。")
@@ -140,3 +140,17 @@ if old.exists() and "bd_name" in st.session_state and not st.session_state.get("
     st.divider()
     st.markdown("### 当前名片")
     st.image(str(old), width=420)
+
+# ---------- 其他 agent 提交人设 ----------
+st.divider()
+with st.expander("🤖 其他 agent 提交人设（人设=画像，填完自动带进名片"):
+    st.caption("名片、同行分析、定价建议、简历初稿共用同一份画像。"
+               "你在别的项目里了解这位用户，就替他把人设同步过来。")
+    cli_card("给其他 agent 的人设入口", [
+        "# 先查当前画像",
+        r'.\.venv\Scripts\python.exe -X utf8 -m core.profile get',
+        "",
+        '# 提交人设（name=名片署名，strengths=名片上的擅长标签，direction=一句话介绍）',
+        r'.\.venv\Scripts\python.exe -X utf8 -m core.profile set --name "俊哥" --strengths "Python自动化,爬虫,AI提效" --direction "帮小店主用AI提效的技术搭子"',
+    ], note="画像提交后，用户在「立人设」页点「生成名片」即用人设出图；"
+            "手动表单随时可改，两边数据同源。")
