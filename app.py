@@ -149,6 +149,23 @@ a { color: var(--accent); }
 from config import settings  # noqa: E402
 from core import llm_client  # noqa: E402
 
+
+def _gate() -> None:
+    """公网部署时的口令门（.env 的 ACCESS_PASS 有值才启用；本地留空=直接进）。"""
+    if not settings.access_pass or st.session_state.get("_unlocked"):
+        return
+    st.markdown('<p class="big-title">托摆<span class="stamp">。</span></p>',
+                unsafe_allow_html=True)
+    st.caption("一人公司工作台 · 公网演示版")
+    pwd = st.text_input("请输入访问口令", type="password", key="_gate_pwd")
+    if st.button("进入", type="primary"):
+        if pwd == settings.access_pass:
+            st.session_state._unlocked = True
+            st.rerun()
+        else:
+            st.error("口令不对，请核对提交材料里的访问口令")
+    st.stop()
+
 DEFAULT_STATE = {
     "step": "intake",            # 开张流程内部状态机：intake | select | generate | result
     "role": None, "skill": "", "case": "",
@@ -167,6 +184,7 @@ def ensure_state() -> None:
 
 def main() -> None:
     ensure_state()
+    _gate()
 
     # 侧边栏顶部：品牌 logo（st.logo 固定渲染在导航上方）
     _logo = str(Path(__file__).parent / "assets" / "logo.png")

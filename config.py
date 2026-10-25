@@ -44,6 +44,7 @@ class Settings:
     parallel_images: int = int(_raw.get("PARALLEL_IMAGES", "1") or 1)
     enable_video: bool = _raw.get("ENABLE_VIDEO", "false").lower() == "true"
     video_model: str = _raw.get("VIDEO_MODEL", "sora-2")
+    access_pass: str = _raw.get("ACCESS_PASS", "")
     output_dir: Path = PROJECT_ROOT / "output"
     examples_dir: Path = PROJECT_ROOT / "examples"
     prompts_dir: Path = PROJECT_ROOT / "prompts"
