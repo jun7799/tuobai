@@ -108,6 +108,14 @@ python -m venv .venv
 **真实成交证据**：闲鱼已真实上架（¥69 爬虫定制服务）：
 https://www.goofish.com/item?id=1095687996473
 
+## 联系我
+
+对项目感兴趣，或者有资源可以提供的小伙伴，都欢迎加我微信聊聊 👋
+
+<p align="left">
+  <img src="assets/wechat_qr.jpg" width="220" alt="微信二维码"/>
+</p>
+
 ## 致谢与开源说明
 
 - [goofish-cli](https://github.com/fancyboi999/goofish-cli)（Apache-2.0）：闲鱼自动化 CLI
