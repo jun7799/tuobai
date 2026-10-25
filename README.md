@@ -86,6 +86,8 @@ python -m core.pipeline --role 技术开发 --skill "帮人写Python爬虫，3�
 
 ## 怎么跑
 
+**在线体验**：http://124.221.77.217:8080/tuobai/ ——找方向、看同行、技能拆解、生成全套装备都能直接玩；闲鱼真实上架与小红书渲染涉及账号与本地环境，请下载本地运行：
+
 ```bash
 # 1. 复制 .env.example 为 .env，填 API Key 和本机路径（goofish/渲染脚本/系统Python）
 # 2. 双击 run.bat，或：
